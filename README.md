@@ -1,4 +1,4 @@
-./test
+./test                                                                                                                         
     basic_request  简单写了一个request的请求查看请求回来的数据
     tieba          简单的获取了几个html页面并写入文件
     reg.py         简单的用正则匹配了请求的页面获取想要的数据
