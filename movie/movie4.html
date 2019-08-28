@@ -554,7 +554,7 @@
                                 <span class="rating45-t"></span>
                                 <span class="rating_num" property="v:average">8.9</span>
                                 <span property="v:best" content="10.0"></span>
-                                <span>391592人评价</span>
+                                <span>391706人评价</span>
                         </div>
 
                             <p class="quote">
@@ -594,7 +594,7 @@
                                 <span class="rating45-t"></span>
                                 <span class="rating_num" property="v:average">8.7</span>
                                 <span property="v:best" content="10.0"></span>
-                                <span>664397人评价</span>
+                                <span>664623人评价</span>
                         </div>
 
                             <p class="quote">
@@ -952,7 +952,7 @@
                                 <span class="rating45-t"></span>
                                 <span class="rating_num" property="v:average">9.3</span>
                                 <span property="v:best" content="10.0"></span>
-                                <span>151908人评价</span>
+                                <span>152008人评价</span>
                         </div>
 
                             <p class="quote">
@@ -991,7 +991,7 @@
                                 <span class="rating45-t"></span>
                                 <span class="rating_num" property="v:average">8.7</span>
                                 <span property="v:best" content="10.0"></span>
-                                <span>460612人评价</span>
+                                <span>460758人评价</span>
                         </div>
 
                             <p class="quote">
@@ -1419,7 +1419,7 @@ var account_pop={open:function(o,e){e?referrer="?referrer="+encodeURIComponent(e
             existingNode = global.document.getElementsByTagName('script')[0],
             adSource = '//erebor.douban.com/',
             userId = '',
-            browserId = 'kOsSrvq0wKs',
+            browserId = 'S0a0nPkMoBk',
             criteria = '3:/top250?start=75&amp;filter=',
             preview = '',
             debug = false,
@@ -1546,12 +1546,46 @@ for(var i = 0, l = accounts.length; i < l; i++) {
 
 
 
+  <img src="https://www.douban.com/pics/10k.jpg" style="display:none;" />
+  <img src="https://img3.doubanio.com/pics/10k.jpg" style="display:none;" />
+  <img src="https://img3.doubanio.com/pics/10k.jpg" style="display:none;" />
+  <img src="https://img3.doubanio.com/pics/10k.jpg" style="display:none;" />
+
+<script type="text/javascript">
+$(window).load(function(){
+    if (get_cookie('ct')) return;
+    var submit_result = function(domain, key, cost) {
+        $.get("https://www.douban.com/misc/ct", {domain:domain, key:key, cost:cost});
+    };
+    var test = function(domain, url, key, timeout) {
+        var img = $('<img src="http://'+domain+'.douban.com'+url+'" style="display:none;" />');
+        var begin = new Date();
+        var t;
+        img.load(function() {
+            var cost = new Date() - begin;
+            clearTimeout(t);
+            submit_result(domain, key, cost);
+            set_cookie({ct:'y'});
+        });
+        $().append(img);
+        t = setTimeout(function(){
+            submit_result(domain, key, "timedout");
+            }, timeout);
+    };
+    test('www', '/pics/ct-10k.jpg', 'ct-10k', 10000);
+    test('img1', '/pics/ct-10k.jpg', 'ct-10k', 10000);
+    test('img3', '/pics/ct-10k.jpg', 'ct-10k', 10000);
+    test('img5', '/pics/ct-10k.jpg', 'ct-10k', 10000);
+});
+</script>
+
+
 
 
       
     
 
-    <!-- fram16-docker-->
+    <!-- fram52-docker-->
 
   <script>_SPLITTEST=''</script>
 </body>
